@@ -5,9 +5,11 @@ const cors = require('cors');
 const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 const eventRoute = require("./routes/eventRoute");
+const attendanceRoute = require("./routes/attendanceroute");
+// const EmployeeModel = require("./models/Employee");
 
 const app = express();
-
+app.use(express.json());
 // Include the User model
 // const User = require('./models/User');
 
@@ -29,6 +31,7 @@ app.use(bodyParser.json());
 app.use("/api/events", eventRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
+app.use('/attendance', attendanceRoute);
 
 // Start the server
 app.listen(PORT, () => {
