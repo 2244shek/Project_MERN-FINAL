@@ -6,6 +6,7 @@ const registerRoute = require('./routes/register');
 const loginRoute = require('./routes/login');
 const eventRoute = require("./routes/eventRoute");
 const attendanceRoute = require("./routes/attendanceroute");
+const leaveroute = require('./routes/leaveRoutes.js')
 // const EmployeeModel = require("./models/Employee");
 
 const app = express();
@@ -32,6 +33,7 @@ app.use("/api/events", eventRoute);
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/attendance', attendanceRoute);
+app.use('/leave', leaveroute);
 
 // Start the server
 app.listen(PORT, () => {
